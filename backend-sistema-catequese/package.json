@@ -7,6 +7,7 @@
     "@fastify/swagger-ui": "^5.2.6",
     "@scalar/fastify-api-reference": "^1.57.5",
     "fastify": "^5.8.5",
+    "pg": "^8.21.0",
     "prisma": "^6.19.3"
   },
   "scripts": {

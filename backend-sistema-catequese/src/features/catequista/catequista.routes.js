@@ -1,4 +1,4 @@
-const catequistaController = require('./catequista.controller');
+import catequistaController from './catequista.controller.js';
 
 async function catequistaRoutes(fastify, options) {
   fastify.get('/', catequistaController.listar);
@@ -8,4 +8,4 @@ async function catequistaRoutes(fastify, options) {
   fastify.delete('/:id', catequistaController.deletar);
 }
 
-module.exports = catequistaRoutes;
+export default catequistaRoutes;

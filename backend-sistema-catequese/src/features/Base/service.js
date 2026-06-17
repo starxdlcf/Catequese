@@ -1,4 +1,4 @@
-const entidadeRepository = require('./entidade.repository');
+import entidadeRepository from './entidade.repository.js';
 
 class EntidadeService {
   async listarTodos() { 

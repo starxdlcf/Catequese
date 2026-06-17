@@ -1,4 +1,4 @@
-const prisma = require('../../config/prisma');
+import prisma from '../../config/prisma.js';
 
 class CatequistaRepository {
   async findAll() {
@@ -29,4 +29,4 @@ class CatequistaRepository {
   }
 }
 
-module.exports = new CatequistaRepository();
+export default new CatequistaRepository();

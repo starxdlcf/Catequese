@@ -1,4 +1,4 @@
-const catequistaRepository = require('./catequista.repository');
+import catequistaRepository from './catequista.repository.js';
 
 class CatequistaService {
   async listarTodos() {
@@ -27,4 +27,4 @@ class CatequistaService {
   }
 }
 
-module.exports = new CatequistaService();
+export default new CatequistaService();

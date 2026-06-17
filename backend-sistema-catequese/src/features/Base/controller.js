@@ -1,4 +1,4 @@
-const entidadeService = require('./entidade.service');
+import entidadeService from './entidade.service.js';
 
 class EntidadeController {
   async listar(request, reply) {

@@ -1,4 +1,4 @@
-const catequizandoService = require('./catequisando.service');
+import catequizandoService from './catequisando.service.js';
 
 class CatequizandoController {
   async listar(request, reply) {

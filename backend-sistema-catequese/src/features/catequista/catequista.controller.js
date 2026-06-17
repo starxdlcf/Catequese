@@ -1,4 +1,4 @@
-const catequistaService = require('./catequista.service');
+import catequistaService from './catequista.service.js';
 
 class CatequistaController {
   async listar(request, reply) {
@@ -50,4 +50,4 @@ class CatequistaController {
   }
 }
 
-module.exports = new CatequistaController();
+export default new CatequistaController();

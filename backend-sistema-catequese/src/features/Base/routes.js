@@ -1,4 +1,4 @@
-const entidadeController = require('./entidade.controller');
+import entidadeController from './entidade.controller.js';
 
 async function entidadeRoutes(fastify, options) {
   fastify.get('/', entidadeController.listar);

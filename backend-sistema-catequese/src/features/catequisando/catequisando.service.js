@@ -1,4 +1,4 @@
-const catequizandoRepository = require('./catequisando.repository');
+import catequizandoRepository from './catequisando.repository.js';
 
 class CatequizandoService {
   async listarTodos() {

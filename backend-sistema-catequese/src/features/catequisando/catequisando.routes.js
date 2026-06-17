@@ -1,4 +1,4 @@
-const catequizandoController = require('./catequizando.controller');
+import catequizandoController from './catequizando.controller.js';
 
 async function catequizandoRoutes(fastify, options) {
   fastify.get('/', catequizandoController.listar);

@@ -2,7 +2,7 @@ import prisma from '../../config/prisma.js';
 
 class CatequizandoRepository {
   async findAll() {
-    return await prisma.catequizando.findMany();
+    return await prisma.catequizando.findMany({ where: { status: 'ativo' } });
   }
 
   async findById(id) {
@@ -12,7 +12,6 @@ class CatequizandoRepository {
   }
 
   async create(data) {
-    // Garante que strings de data vindas do front virem objetos Date válidos para o Prisma/Postgres
     if (data.nascimento) data.nascimento = new Date(data.nascimento);
     if (data.data_batismo) data.data_batismo = new Date(data.data_batismo);
     if (data.data_eucaristia) data.data_eucaristia = new Date(data.data_eucaristia);
@@ -34,10 +33,11 @@ class CatequizandoRepository {
   }
 
   async delete(id) {
-    return await prisma.catequizando.delete({ 
-      where: { id: Number(id) } 
+    return await prisma.catequizando.update({ 
+      where: { id: Number(id) },
+      data: { status: 'inativo' }
     });
   }
 }
 
-module.exports = new CatequizandoRepository();
+export default new CatequizandoRepository();

@@ -1,0 +1,27 @@
+### Listar usuários
+GET http://localhost:3002/usuarios
+
+### Buscar usuário por id
+GET http://localhost:3002/usuarios/1
+
+### Criar usuário
+POST http://localhost:3002/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João",
+  "email": "joao@example.com",
+  "senha": "senha123",
+  "tipoUsuarioId": 1
+}
+
+### Atualizar usuário
+PUT http://localhost:3002/usuarios/1
+Content-Type: application/json
+
+{
+  "nome": "João da Silva"
+}
+
+### Deletar usuário
+DELETE http://localhost:3002/usuarios/1

@@ -1,0 +1,24 @@
+### Listar dias
+GET http://localhost:3002/dias
+
+### Buscar dia por id
+GET http://localhost:3002/dias/1
+
+### Criar dia
+POST http://localhost:3002/dias
+Content-Type: application/json
+
+{
+  "nome": "Domingo"
+}
+
+### Atualizar dia
+PUT http://localhost:3002/dias/1
+Content-Type: application/json
+
+{
+  "nome": "Sábado"
+}
+
+### Deletar dia
+DELETE http://localhost:3002/dias/1

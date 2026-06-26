@@ -29,4 +29,4 @@ class CatequizandoService {
   }
 }
 
-module.exports = new CatequizandoService();
+export default new CatequizandoService();

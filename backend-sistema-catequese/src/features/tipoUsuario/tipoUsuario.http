@@ -1,0 +1,24 @@
+### Listar tipos de usuário
+GET http://localhost:3002/tipos-usuario
+
+### Buscar tipo por id
+GET http://localhost:3002/tipos-usuario/1
+
+### Criar tipo de usuário
+POST http://localhost:3002/tipos-usuario
+Content-Type: application/json
+
+{
+  "nome": "Admin"
+}
+
+### Atualizar tipo
+PUT http://localhost:3002/tipos-usuario/1
+Content-Type: application/json
+
+{
+  "nome": "Usuário"
+}
+
+### Deletar tipo
+DELETE http://localhost:3002/tipos-usuario/1

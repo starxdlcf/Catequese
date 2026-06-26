@@ -1,4 +1,4 @@
-import catequizandoController from './catequizando.controller.js';
+import catequizandoController from './catequisando.controller.js';
 
 async function catequizandoRoutes(fastify, options) {
   fastify.get('/', catequizandoController.listar);
@@ -8,4 +8,4 @@ async function catequizandoRoutes(fastify, options) {
   fastify.delete('/:id', catequizandoController.deletar);
 }
 
-module.exports = catequizandoRoutes;
+export default catequizandoRoutes;

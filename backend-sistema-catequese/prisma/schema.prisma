@@ -4,12 +4,88 @@
 // Get a free hosted Postgres database in seconds: `npx create-db`
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
 }
+
+model Dia {
+  id        Int      @id @default(autoincrement())
+  nome      String?
+  status    String   @default("ativo")
+  createdAt DateTime @default(now())
+  etapas    Etapa[]
+}
+
+model Etapa {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  status    String   @default("ativo")
+  diaId     Int
+  dia       Dia      @relation(fields: [diaId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Local {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  status    String   @default("ativo")
+  createdAt DateTime @default(now())
+}
+
+model Parentesco {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  status    String   @default("ativo")
+  createdAt DateTime @default(now())
+}
+
+model Responsavel {
+  id             Int           @id @default(autoincrement())
+  nome           String
+  status         String        @default("ativo")
+  telefone       String?
+  createdAt      DateTime      @default(now())
+  catequizandos  Catequizando[]
+}
+
+model TipoUsuario {
+  id        Int       @id @default(autoincrement())
+  nome      String
+  status    String    @default("ativo")
+  usuarios  Usuario[]
+}
+
+model Usuario {
+  id            Int        @id @default(autoincrement())
+  nome          String?
+  email         String     @unique
+  senha         String
+  status        String     @default("ativo")
+  tipoUsuarioId Int?
+  tipoUsuario   TipoUsuario? @relation(fields: [tipoUsuarioId], references: [id])
+  createdAt     DateTime   @default(now())
+}
+
+model Catequizando {
+  id              Int        @id @default(autoincrement())
+  nome            String
+  status          String     @default("ativo")
+  nascimento      DateTime?
+  data_batismo    DateTime?
+  data_eucaristia DateTime?
+  data_crisma     DateTime?
+  responsavelId   Int?
+  responsavel     Responsavel? @relation(fields: [responsavelId], references: [id])
+  createdAt       DateTime   @default(now())
+}
+
+model Catequista {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  status    String   @default("ativo")
+  createdAt DateTime @default(now())
+}
+

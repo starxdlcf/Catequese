@@ -22,4 +22,4 @@ class EntidadeRepository {
   }
 }
 
-module.exports = new EntidadeRepository();
+export default new EntidadeRepository();

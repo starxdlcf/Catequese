@@ -1,0 +1,14 @@
+const fs = require('fs');
+const path = require('path');
+const relative = 'src/features/catequisando/catequizando.controller.js';
+const resolved = path.resolve(relative);
+console.log('cwd', process.cwd());
+console.log('relative', relative);
+console.log('resolved', resolved);
+console.log('existsRelative', fs.existsSync(relative));
+console.log('existsResolved', fs.existsSync(resolved));
+const dir = path.dirname(resolved);
+const names = fs.readdirSync(dir);
+console.log('dir', dir);
+console.log('names', names.map(x => ({x, eq: x === path.basename(relative)})));
+console.log('basename', path.basename(relative));

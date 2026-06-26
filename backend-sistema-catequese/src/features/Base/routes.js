@@ -1,4 +1,4 @@
-import entidadeController from './entidade.controller.js';
+import entidadeController from './controller.js';
 
 async function entidadeRoutes(fastify, options) {
   fastify.get('/', entidadeController.listar);
@@ -8,4 +8,4 @@ async function entidadeRoutes(fastify, options) {
   fastify.delete('/:id', entidadeController.deletar);
 }
 
-module.exports = entidadeRoutes;
+export default entidadeRoutes;

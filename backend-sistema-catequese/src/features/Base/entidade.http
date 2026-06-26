@@ -1,0 +1,24 @@
+### Listar entidades (base)
+GET http://localhost:3002/entidades
+
+### Buscar entidade por id
+GET http://localhost:3002/entidades/1
+
+### Criar entidade
+POST http://localhost:3002/entidades
+Content-Type: application/json
+
+{
+  "nome": "Exemplo entidade"
+}
+
+### Atualizar entidade
+PUT http://localhost:3002/entidades/1
+Content-Type: application/json
+
+{
+  "nome": "Entidade atualizada"
+}
+
+### Deletar entidade
+DELETE http://localhost:3002/entidades/1

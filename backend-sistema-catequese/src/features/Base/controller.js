@@ -1,4 +1,4 @@
-import entidadeService from './entidade.service.js';
+import entidadeService from './service.js';
 
 class EntidadeController {
   async listar(request, reply) {
@@ -47,4 +47,4 @@ class EntidadeController {
   }
 }
 
-module.exports = new EntidadeController();
+export default new EntidadeController();

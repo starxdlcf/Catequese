@@ -1,0 +1,24 @@
+### Neon Auth
+
+POST http://localhost:3002/auth/signup
+Content-Type: application/json
+
+{
+  "email": "usuario@teste.com",
+  "password": "senha123"
+}
+
+### Login Neon Auth
+
+POST http://localhost:3002/auth/login
+Content-Type: application/json
+
+{
+  "email": "usuario@teste.com",
+  "password": "senha123"
+}
+
+### Me
+
+GET http://localhost:3002/auth/me
+Authorization: Bearer {{TOKEN}}

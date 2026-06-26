@@ -1,4 +1,4 @@
-import entidadeRepository from './entidade.repository.js';
+import entidadeRepository from './repository.js';
 
 class EntidadeService {
   async listarTodos() { 
@@ -26,4 +26,4 @@ class EntidadeService {
   }
 }
 
-module.exports = new EntidadeService();
+export default new EntidadeService();

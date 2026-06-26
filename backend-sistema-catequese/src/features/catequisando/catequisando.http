@@ -1,0 +1,26 @@
+### Listar catequizandos
+GET http://localhost:3002/catequizandos
+
+### Buscar catequizando por id
+GET http://localhost:3002/catequizandos/1
+
+### Criar catequizando
+POST http://localhost:3002/catequizandos
+Content-Type: application/json
+
+{
+  "nome": "Pedro",
+  "nascimento": "2010-05-15",
+  "responsavelId": 1
+}
+
+### Atualizar catequizando
+PUT http://localhost:3002/catequizandos/1
+Content-Type: application/json
+
+{
+  "nome": "Pedro Souza"
+}
+
+### Deletar catequizando
+DELETE http://localhost:3002/catequizandos/1

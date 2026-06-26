@@ -1,0 +1,27 @@
+const fs = require('fs');
+const path = require('path');
+const cwd = process.cwd();
+console.log('cwd', cwd);
+const relative = 'src/features/catequisando/catequizando.controller.js';
+const joined = path.join('src', 'features', 'catequisando', 'catequizando.controller.js');
+const resolved = path.resolve(relative);
+const resolvedJoined = path.resolve(joined);
+console.log('relative', relative, 'len', relative.length, [...relative].map(c=>c.charCodeAt(0)));
+console.log('joined', joined, 'len', joined.length, [...joined].map(c=>c.charCodeAt(0)));
+console.log('resolved', resolved);
+console.log('resolvedJoined', resolvedJoined);
+console.log('existsRelative', fs.existsSync(relative));
+console.log('existsJoined', fs.existsSync(joined));
+console.log('existsResolved', fs.existsSync(resolved));
+console.log('existsResolvedJoined', fs.existsSync(resolvedJoined));
+const dir = path.dirname(resolved);
+console.log('dir exists', fs.existsSync(dir));
+const names = fs.readdirSync(dir);
+console.log('names JSON', JSON.stringify(names));
+const basename = path.basename(relative);
+console.log('basename', basename, 'len', basename.length, [...basename].map(c=>c.charCodeAt(0)));
+console.log('names includes basename', names.includes(basename));
+console.log('file list with codes:');
+names.forEach((name) => {
+  console.log(JSON.stringify(name), name.length, name === basename, [...name].map((c) => c.charCodeAt(0)));
+});

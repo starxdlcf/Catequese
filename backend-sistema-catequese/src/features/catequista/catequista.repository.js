@@ -2,7 +2,7 @@ import prisma from '../../config/prisma.js';
 
 class CatequistaRepository {
   async findAll() {
-    return await prisma.catequista.findMany();
+    return await prisma.catequista.findMany({ where: { status: 'ativo' } });
   }
 
   async findById(id) {
@@ -23,8 +23,9 @@ class CatequistaRepository {
   }
 
   async delete(id) {
-    return await prisma.catequista.delete({
-      where: { id: Number(id) }
+    return await prisma.catequista.update({
+      where: { id: Number(id) },
+      data: { status: 'inativo' }
     });
   }
 }
